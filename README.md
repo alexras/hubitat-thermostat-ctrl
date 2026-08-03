@@ -24,3 +24,15 @@ secrets = {
     "thermostat_device_id": "11",
 }
 ```
+
+## Managing Libraries
+
+This script uses the `adafruit_magtag` library, which can be install on-device with
+
+```bash
+uv run circup install adafruit_magtag
+```
+
+It's also using some additional fonts:
+
+FIXME add fonts

@@ -3,7 +3,8 @@ name = "magtag-thermostat-ctrl"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
     "adafruit-circuitpython-magtag>=2.2.18",
+    "circup>=2.4.0",
 ]
