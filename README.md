@@ -35,4 +35,7 @@ uv run circup install adafruit_magtag
 
 It's also using some additional fonts:
 
-FIXME add fonts
+```
+font_raleway_regular_14
+font_raleway_regular_30
+```
