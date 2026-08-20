@@ -35,7 +35,7 @@ uv run circup install adafruit_magtag
 
 It's also using some additional fonts:
 
-```
-font_raleway_regular_14
-font_raleway_regular_30
+```bash
+uv run circup install font_raleway_regular_14
+uv run circup install font_raleway_regular_30
 ```
