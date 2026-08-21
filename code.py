@@ -6,17 +6,16 @@ Hubitat "Virtual Thermostat" (or any thermostat device), talked to
 through Hubitat's Maker API app.
 
 Buttons:
-  A (far left)   -> raise setpoint
-  B              -> lower setpoint
-  C              -> cycle mode (off -> heat -> cool -> auto)
-  D (far right)  -> manual refresh
+  A (far left)   -> decrease heat setpoint
+  B              -> increase heat setpoint
+  C              -> decrease cool setpoint
+  D (far right)  -> increase cool setpoint
 
 Requires a secrets.py on the board with WiFi + Hubitat details.
 See secrets.py.example for the format.
 """
 
 import time
-import terminalio
 from adafruit_display_text import label
 from adafruit_magtag.magtag import MagTag
 from font_raleway_regular_14 import FONT as RALEWAY_REGULAR_14
@@ -211,15 +210,6 @@ def adjust_setpoint(setpoint, delta):
         current = float(state.get("heatingSetpoint", 68))
         hubitat_command("setHeatingSetpoint", current + delta)
 
-    refresh_from_hub()
-
-
-def cycle_mode():
-    mode = state.get("thermostatMode", "off")
-    idx = MODE_CYCLE.index(mode) if mode in MODE_CYCLE else 0
-    next_mode = MODE_CYCLE[(idx + 1) % len(MODE_CYCLE)]
-    hubitat_command("setThermostatMode", next_mode)
-    time.sleep(1)
     refresh_from_hub()
 
 
